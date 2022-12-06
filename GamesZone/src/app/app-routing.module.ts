@@ -2,13 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './telas/cadastro/cadastro.component';
 import { HomeComponent } from './telas/home/home.component';
-import { NavbarPesquisaComponent } from './telas/navbar-pesquisa/navbar-pesquisa.component';
+import { LoginComponent } from './telas/login/login.component';
 
 const routes: Routes = [
-  { path: 'login', component: CadastroComponent },
-  { path: 'navbar', component: NavbarPesquisaComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
-  { path: 'home', component: HomeComponent }
+  { path: '', component: HomeComponent }
 ];
 
 @NgModule({
@@ -16,3 +15,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+

@@ -6,7 +6,7 @@ import { CadastroComponent } from './telas/cadastro/cadastro.component';
 import { HomeComponent } from './telas/home/home.component';
 
 const appRoutes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    {path: '', component:HomeComponent},
     {path: 'login', component:LoginComponent},
     {path:'cadastro', component:CadastroComponent},   
 ];
