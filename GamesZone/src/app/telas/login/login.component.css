@@ -8,6 +8,7 @@ img#imgLateral {
 section#sectionLogin {
     background-color: #0C1117;
     width: 35%;
+    text-align: center;
     height: 100vh;
     float: right;
     color: white;
@@ -60,15 +61,18 @@ div#divareaInput {
 }
 
 h2 {
+    float: left;
     margin-left: 90px;  
     padding-bottom: 10px;
 }
 
-p {
+p#textofora {
     margin-left: 90px;  
     font-size: 14px; 
-    padding-bottom: 40px;
+    padding-bottom: 50px;
+    text-align: left;
 }
+
 
 div#divareaInput a {
     font-size: small;
@@ -91,6 +95,7 @@ button#btnEntrar {
 div#checkbox {
     margin-left: 90px; 
     margin-top: 50px;
+    float: left;
 }
 
 div#checkbox input{
@@ -98,7 +103,8 @@ div#checkbox input{
 }
 
 div#cadastro p {
-    padding-left: 150px;
+    text-align: center;
+    margin-left: 0;
 }
 
 div#cadastro a{

@@ -8,12 +8,14 @@ div#tudo {
 .header button{
     float: right;
     display: flex;
-    
+    background-color: #121922;
+    border: none;
+    padding-left: 20px ;    
 }
 
 .header h2 {
     padding-left: 60px;
-    padding-top:20px;
+    padding-top: 20px;
 }
 
 section#partidas {   
@@ -26,4 +28,17 @@ section#noticias {
     height: 60vh;
     width: 73.7vh;    
     float: right;
+}
+
+img {
+    justify-content: center;
+    float: center;
+    align-items: center;
+    padding-left: 100px;
+    margin-left: 50px;
+    margin-bottom: 100px;
+}
+
+i {
+    font-size: 30px;
 }
