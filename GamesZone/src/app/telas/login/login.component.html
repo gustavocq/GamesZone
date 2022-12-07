@@ -6,28 +6,25 @@
 
     <div class="txtLogin">
       <h2>Entrar</h2>
-      <p>
-        Digite seu endereço de e-mail e senha<br>
-        para acessar sua conta
-      </p>
+      <p>Digite seu usuário e senha para acessar sua conta.</p>
     </div>
 
     <form id="divareaInput">
       <div class="espInput">
-        <h2>E-mail</h2>
-        <div class="areaInput"><input class="txtEntrada" placeholder="Digite seu e-mail"></div>
+        <h2>Usuário</h2>
+        <div class="areaInput"><input type="text" class="txtEntrada" placeholder="Digite seu usuário"></div>
       </div>
 
       <div class="espInput">
         <h2>Senha</h2>
-        <div class="areaInput"><input class="txtEntrada" placeholder="Digite sua senha"></div>
+        <div class="areaInput"><input type="password" class="txtEntrada" placeholder="Digite sua senha"></div>
       </div>
 
       <button type="button" id="btnEntrar">Entrar</button>
     </form>
 
     <div id="cadastro">
-      <p>Não possui conta? <a>Cadastra-se</a></p>
+      <p>Não possui conta? <a routerLink="/cadastro">Cadastra-se</a></p>
     </div>
   </section>
 
