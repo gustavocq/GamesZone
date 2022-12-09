@@ -9,6 +9,8 @@ import { CampeonatosComponent } from './telas/campeonatos/campeonatos.component'
 import { JogadoresComponent } from './telas/jogadores/jogadores.component';
 import { EquipesComponent } from './telas/equipes/equipes.component';
 import { JogosdehojeComponent } from './telas/jogosdehoje/jogosdehoje.component';
+import { ConfigComponent } from './telas/config/config.component';
+import { PerfilComponent } from './telas/perfil/perfil.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -19,7 +21,9 @@ const routes: Routes = [
   { path: 'campeonatos', component: CampeonatosComponent },
   { path: 'jogadores', component: JogadoresComponent },
   { path: 'equipes', component: EquipesComponent },
-  { path: 'jogoshoje', component: JogosdehojeComponent }
+  { path: 'jogoshoje', component: JogosdehojeComponent },
+  { path: 'config', component: ConfigComponent },
+  { path: 'perfil', component: PerfilComponent }
 ];
 
 @NgModule({
