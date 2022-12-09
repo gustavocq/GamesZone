@@ -1,0 +1,46 @@
+div#bannerCamp {
+    width: 100%;
+    background-color: #161E29;
+    border-radius: 10px 10px 0 0;
+    background-image: url(../../../assets/imgs/bg2.png);
+    background-size: cover;
+    background-position: bottom left;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+#imgBannerCamp img{
+    width: 350px;
+}
+
+.navLeague{
+    background-color: #161E29;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 1rem;
+}
+
+.navLeague ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.navLeague ul li{
+    margin: 0 15px;
+}
+
+.navLeagueIcon{
+    margin-right: 10px;
+}
+
+.btnNavLeague{
+    color: #D8D8D8;
+}
