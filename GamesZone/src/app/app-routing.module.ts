@@ -8,6 +8,7 @@ import { ChatComponent } from './telas/chat/chat.component';
 import { CampeonatosComponent } from './telas/campeonatos/campeonatos.component';
 import { JogadoresComponent } from './telas/jogadores/jogadores.component';
 import { EquipesComponent } from './telas/equipes/equipes.component';
+import { JogosdehojeComponent } from './telas/jogosdehoje/jogosdehoje.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'chat', component: ChatComponent },
   { path: 'campeonatos', component: CampeonatosComponent },
   { path: 'jogadores', component: JogadoresComponent },
-  { path: 'equipes', component: EquipesComponent }
+  { path: 'equipes', component: EquipesComponent },
+  { path: 'jogoshoje', component: JogosdehojeComponent }
 ];
 
 @NgModule({
