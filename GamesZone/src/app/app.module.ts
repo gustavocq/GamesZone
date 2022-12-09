@@ -14,6 +14,8 @@ import { JogadoresComponent } from './telas/jogadores/jogadores.component';
 import { EquipesComponent } from './telas/equipes/equipes.component';
 import { JogosdehojeComponent } from './telas/jogosdehoje/jogosdehoje.component';
 import { NavbarLeagueComponent } from './telas/navbar-league/navbar-league.component';
+import { PerfilComponent } from './telas/perfil/perfil.component';
+import { ConfigComponent } from './telas/config/config.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { NavbarLeagueComponent } from './telas/navbar-league/navbar-league.compo
     EquipesComponent,
     JogosdehojeComponent,
     NavbarLeagueComponent,
+    PerfilComponent,
+    ConfigComponent,
   ],
   imports: [
     BrowserModule,  
