@@ -48,4 +48,3 @@ export class SessionService {
       .post<any>(`${this.base_url}v1/resetPassword`, _email).pipe(take(1));
   }
 }
-

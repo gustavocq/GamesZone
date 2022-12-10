@@ -17,60 +17,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr *ngFor="let comp of listCampeonatos">
                 <td><i class="bi bi-controller"></i></td>
-                <td>CBLoiro</td>
-                <td class="silence">Brasil</td>
-                <td class="silence">22/10/200 até 23/10/2022</td>
-              </tr>
-              <tr>
-                <td><i class="bi bi-controller"></i></td>
-                <td>CBLoiro</td>
-                <td class="silence">Brasil</td>
-                <td class="silence">22/10/200 até 23/10/2022</td>
-              </tr>
-              <tr>
-                <td><i class="bi bi-controller"></i></td>
-                <td>CBLoiro</td>
-                <td class="silence">Brasil</td>
-                <td class="silence">22/10/200 até 23/10/2022</td>
-              </tr>
-              <tr>
-                <td><i class="bi bi-controller"></i></td>
-                <td>CBLoiro</td>
-                <td class="silence">Brasil</td>
-                <td class="silence">22/10/200 até 23/10/2022</td>
-              </tr>
-              <tr>
-                <td><i class="bi bi-controller"></i></td>
-                <td>CBLoiro</td>
-                <td class="silence">Brasil</td>
-                <td class="silence">22/10/200 até 23/10/2022</td>
-              </tr>
-              <tr>
-                <td><i class="bi bi-controller"></i></td>
-                <td>CBLoiro</td>
-                <td class="silence">Brasil</td>
-                <td class="silence">22/10/200 até 23/10/2022</td>
-              </tr>
-              <tr>
-                <td><i class="bi bi-controller"></i></td>
-                <td>CBLoiro</td>
-                <td class="silence">Brasil</td>
-                <td class="silence">22/10/200 até 23/10/2022</td>
-              </tr>
-              <tr>
-                <td><i class="bi bi-controller"></i></td>
-                <td>CBLoiro</td>
-                <td class="silence">Brasil</td>
-                <td class="silence">22/10/200 até 23/10/2022</td>
-              </tr>
-              <tr>
-                <td><i class="bi bi-controller"></i></td>
-                <td>CBLoiro</td>
-                <td class="silence">Brasil</td>
-                <td class="silence">22/10/200 até 23/10/2022</td>
-              </tr>
+                <td>{{comp.Name}}</td>
+                <td class="silence">{{comp.AreaName}}</td>
+                <td class="silence">{{comp.StartDate}} a {{comp.EndDate}}</td>
+            </tr>
             </tbody>
           </table>
     </div>

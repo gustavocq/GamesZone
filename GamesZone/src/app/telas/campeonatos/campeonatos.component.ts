@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CampeonatoService } from 'src/app/services/campeonato.service';
 
 @Component({
   selector: 'app-campeonatos',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CampeonatosComponent implements OnInit {
 
-  constructor() { }
+  listCampeonatos: Array<any> = [];
+
+  constructor(
+    private campeonato_service: CampeonatoService
+  ) { }
 
   ngOnInit(): void {
-  }
+    this.getAllCampeonatos();
 
+  }
+  getAllCampeonatos() {
+    this.campeonato_service.getAllCampeonatos().subscribe({
+      next: (result) => {
+        this.listCampeonatos = result.DATA;
+        // this.listPlayers.sort((a, b) => (a.MatchName > b.MatchName) ? 1 : -1)
+        console.log(this.listCampeonatos)
+      },
+      error:(err) => {
+        console.log(err);
+      },
+    });
+  }
 }

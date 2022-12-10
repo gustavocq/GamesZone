@@ -4,6 +4,8 @@ import { CampeonatoService } from 'src/app/services/campeonato.service';
 import { PlayerService } from 'src/app/services/player.service';
 import { TeamService } from 'src/app/services/team.service';
 import { UserService } from 'src/app/services/user.service';
+import { JogosService } from 'src/app/services/jogos.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -16,8 +18,10 @@ export class HomeComponent implements OnInit {
   listPlayers: Array<any> = [];
   listCampeonatos: Array<any> = [];
   listTeams: Array<any> = [];
+  listJogos: Array<any> = [];
 
   constructor(
+    private jogos_service: JogosService,
     private campeonato_service: CampeonatoService,
     private user_service: UserService,
     private player_service: PlayerService,
@@ -30,6 +34,7 @@ export class HomeComponent implements OnInit {
     this.getAllTeams();
     this.getAllCampeonatos();
     this.getAllPlayers();
+    this.getAllJogos();
   }
 
   getCurrentUser() {
@@ -82,4 +87,16 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  getAllJogos() {
+    this.jogos_service.getAllJogos().subscribe({
+      next: (result) => {
+        this.listJogos = result.DATA;
+        // this.listPlayers.sort((a, b) => (a.MatchName > b.MatchName) ? 1 : -1)
+        console.log(this.listJogos)
+      },
+      error:(err) => {
+        console.log(err);
+      },
+    });
+  }
 }

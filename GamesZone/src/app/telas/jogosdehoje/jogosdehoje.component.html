@@ -2,34 +2,31 @@
 
 <div class="box" id="tudo">
   <app-navbar-league></app-navbar-league>
-  
-    <div class="my-3">
-        <h2>Jogos de Hoje</h2>
-    </div>
-    <div class="conteudoMain h-item-total">
-        <table class="table tableLeague">
-            <thead>
-              <tr>
-                <th></th>
-                <th class="div1">Nome</th>
-                <th class="div3">Resultado</th>
-                <th class="div2">Data</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><i class="bi bi-controller"></i></td>
-                <td>Furia x Red</td>
-                <td class="silence">Aguardando</td>
-                <td class="silence">Hoje 16:00</td>
-              </tr>
-              <tr>
-                <td><i class="bi bi-controller"></i></td>
-                <td>Furia x Liquid</td>
-                <td class="silence">2x1</td>
-                <td class="silence">Hoje 18:00</td>
-              </tr>
-            </tbody>
-          </table>
-    </div>
+
+  <div class="my-3">
+    <h2>Jogos de Hoje</h2>
+  </div>
+  <div class="conteudoMain h-item-total">
+    <table class="table tableLeague">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="div1">Nome</th>
+          <th class="div3">Resultado</th>
+          <th class="div2">Data</th>
+          <th class="div3">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let jogos of listJogos">
+          <td><i class="bi bi-controller"></i></td>
+          <td>{{jogos.TeamAName}} vs {{jogos.TeamBName}}</td>
+          <td class="silence" *ngIf="!jogos.TeamAScore">0 x 0</td>
+          <td class="silence" *ngIf="jogos.TeamAScore">{{jogos.TeamAScore}} x {{jogos.TeamBScore}}</td>
+          <td class="silence">{{jogos.Updated | date: 'dd/MM/yyyy'}}</td>
+          <td class="silence">{{jogos.Status}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

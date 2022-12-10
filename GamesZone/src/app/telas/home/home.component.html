@@ -18,41 +18,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr *ngFor="let comp of listCampeonatos">
                             <td><i class="bi bi-controller"></i></td>
-                            <td>CBLoiro</td>
-                            <td class="silence">Brasil</td>
-                            <td class="silence">22/10/200 até 23/10/2022</td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi bi-controller"></i></td>
-                            <td>CBLoiro</td>
-                            <td class="silence">Brasil</td>
-                            <td class="silence">22/10/200 até 23/10/2022</td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi bi-controller"></i></td>
-                            <td>CBLoiro</td>
-                            <td class="silence">Brasil</td>
-                            <td class="silence">22/10/200 até 23/10/2022</td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi bi-controller"></i></td>
-                            <td>CBLoiro</td>
-                            <td class="silence">Brasil</td>
-                            <td class="silence">22/10/200 até 23/10/2022</td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi bi-controller"></i></td>
-                            <td>CBLoiro</td>
-                            <td class="silence">Brasil</td>
-                            <td class="silence">22/10/200 até 23/10/2022</td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi bi-controller"></i></td>
-                            <td>CBLoiro</td>
-                            <td class="silence">Brasil</td>
-                            <td class="silence">22/10/200 até 23/10/2022</td>
+                            <td>{{comp.Name}}</td>
+                            <td class="silence">{{comp.AreaName}}</td>
+                            <td class="silence">{{comp.StartDate}} a {{comp.EndDate}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -69,24 +39,20 @@
                 <table class="table tableLeague">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th class="div1">Nome</th>
+                            <th class="div1">Times</th>
                             <th class="div2">Resultado</th>
                             <th class="div3">Data</th>
+                            <th class="div3">Status</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr *ngFor="let jogos of listJogos">
                             <td><i class="bi bi-controller"></i></td>
-                            <td>Furia x Red</td>
-                            <td class="silence">Aguardando</td>
-                            <td class="silence">Hoje 16:00</td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi bi-controller"></i></td>
-                            <td>Furia x Liquid</td>
-                            <td class="silence">2x1</td>
-                            <td class="silence">Hoje 18:00</td>
+                            <td>{{jogos.TeamAName}} vs {{jogos.TeamBName}}</td>
+                            <td class="silence" *ngIf="!jogos.TeamAScore">0 x 0</td>
+                            <td class="silence" *ngIf="jogos.TeamAScore">{{jogos.TeamAScore}} x {{jogos.TeamBScore}}</td>
+                            <td class="silence">{{jogos.Updated | date: 'dd/MM/yyyy'}}</td>
+                            <td class="silence">{{jogos.Status}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -94,7 +60,7 @@
         </div>
     </div>
     <div id="ad">
-        
+
     </div>
     <div id="divEquipes">
         <div class="h2">
@@ -105,22 +71,24 @@
             <div class="conteudoMain h-item-total">
                 <table class="table tableLeague">
                     <thead>
-                      <tr>
-                        <th>Active</th>
-                        <th class="div2">Nome</th>
-                        <th class="div1">Area</th>
-                        <th class="div3">Fundação</th>
-                      </tr>
+                        <tr>
+                            <th>Active</th>
+                            <th class="div2">Nome</th>
+                            <th class="div1">Area</th>
+                            <th class="div3">Fundação</th>
+                        </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td><i class="bi bi-patch-check"></i></td>
-                        <td>Furia</td>
-                        <td class="silence">America do Sul</td>
-                        <td class="silence">01/01/2022</td>
-                      </tr>
+                        <tr *ngFor="let teams of listTeams">
+                            <td *ngIf="teams.Active"><i class="bi bi-patch-check"></i></td>
+                            <td *ngIf="!teams.Active"><i class="bi bi-x-circle-fill"></i></td>
+                            <td>{{teams.ShortName}}</td>
+                            <td class="silence">{{teams.AreaName}}</td>
+                            <td class="silence" *ngIf="teams.Founded">{{teams.Founded}}</td>
+                            <td class="silence" *ngIf="!teams.Founded">Sem info</td>
+                        </tr>
                     </tbody>
-                  </table>
+                </table>
             </div>
         </div>
     </div>
@@ -133,23 +101,26 @@
             <div class="conteudoMain h-item-total">
                 <table class="table tableLeague">
                     <thead>
-                      <tr>
-                        <th>Rota</th>
-                        <th class="div2">Nick</th>
-                        <th class="div1">Nome</th>
-                        <th class="div3">Nacionalidade</th>
-                      </tr>
+                        <tr>
+                            <th>Rota</th>
+                            <th class="div2">Nick</th>
+                            <th class="div1">Nome</th>
+                            <th class="div3">Nacionalidade</th>
+                        </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let player of listPlayers">
-                        <td *ngIf="!player.Position"><img class="img-rota" src="../../../assets/imgs/adc.png" alt="rota nao declarada"></td>
-                        <td *ngIf="player.Position"><img class="img-rota" src="../../../assets/imgs/{{player.Position.toLowerCase()}}.png" alt="rota nao declarada"></td>
-                        <td>{{player.MatchName}}</td>
-                        <td class="silence">{{player.CommonName}}</td>
-                        <td class="silence">{{player.Nationality}}</td>
-                      </tr>
+                        <tr *ngFor="let player of listPlayers">
+                            <td *ngIf="!player.Position"><img class="img-rota" src="../../../assets/imgs/adc.png"
+                                    alt="rota nao declarada"></td>
+                            <td *ngIf="player.Position"><img class="img-rota"
+                                    src="../../../assets/imgs/{{player.Position.toLowerCase()}}.png"
+                                    alt="rota nao declarada"></td>
+                            <td>{{player.MatchName}}</td>
+                            <td class="silence">{{player.CommonName}}</td>
+                            <td class="silence">{{player.Nationality}}</td>
+                        </tr>
                     </tbody>
-                  </table>
+                </table>
             </div>
         </div>
     </div>

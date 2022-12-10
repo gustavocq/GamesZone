@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JogosService } from 'src/app/services/jogos.service';
 
 @Component({
   selector: 'app-jogosdehoje',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JogosdehojeComponent implements OnInit {
 
-  constructor() { }
+  listJogos: Array<any> = [];
+
+  constructor(
+    private jogos_service: JogosService
+    ) {}
 
   ngOnInit(): void {
+    this.getAllJogos();
   }
 
+getAllJogos() {
+  this.jogos_service.getAllJogos().subscribe({
+    next: (result) => {
+      this.listJogos = result.DATA;
+      // this.listPlayers.sort((a, b) => (a.MatchName > b.MatchName) ? 1 : -1)
+      console.log(this.listJogos)
+    },
+    error:(err) => {
+      console.log(err);
+    },
+  });
+}
 }
