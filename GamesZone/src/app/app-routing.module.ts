@@ -13,7 +13,7 @@ import { ConfigComponent } from './telas/config/config.component';
 import { PerfilComponent } from './telas/perfil/perfil.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
   { path: 'navbar', component: NavbarPesquisaComponent },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'home', component: HomeComponent },

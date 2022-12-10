@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
+  user: any;
+
   constructor() { }
 
   ngOnInit(): void {
+    const userStr: string | null = localStorage.getItem("user");
+    if (userStr) {
+      this.user = JSON.parse(userStr);
+    }
+    console.log(this.user)
   }
 
 }

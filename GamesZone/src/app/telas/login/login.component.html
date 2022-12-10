@@ -9,18 +9,24 @@
       <p>Digite seu usuário e senha para acessar sua conta.</p>
     </div>
 
-    <form id="divareaInput">
+    <form id="divareaInput" [formGroup]="loginForm" (keydown)="keyDownFunction($event)">
       <div class="espInput">
         <h2>Usuário</h2>
-        <div class="areaInput"><input type="text" class="txtEntrada" placeholder="Digite seu usuário"></div>
+        <div class="areaInput">
+          <input type="text" class="txtEntrada" pInputText
+          formControlName="Email" placeholder="Digite seu usuário">
+        </div>
       </div>
 
       <div class="espInput">
         <h2>Senha</h2>
-        <div class="areaInput"><input type="password" class="txtEntrada" placeholder="Digite sua senha"></div>
+        <div class="areaInput">
+          <input type="password" class="txtEntrada" pInputText
+          formControlName="Password" placeholder="Digite sua senha">
+        </div>
       </div>
 
-      <button type="button" id="btnEntrar">Entrar</button>
+      <button type="button" id="btnEntrar" (click)="login()">Entrar</button>
     </form>
 
     <div id="cadastro">

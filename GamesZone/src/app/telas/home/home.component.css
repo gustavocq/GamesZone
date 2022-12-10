@@ -94,6 +94,11 @@ div#jogosDeHoje{
     background-color: #313EFE;
 }
 
+.img-rota {
+    width: 40px;
+    height: 40px;
+}
+
 div h2 {
     float: left;
     margin-bottom: 15px;

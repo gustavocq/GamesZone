@@ -141,11 +141,12 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td><i class="bi bi-align-middle"></i></td>
-                        <td>Nairo</td>
-                        <td class="silence">Vitor Ian a Lenda</td>
-                        <td class="silence">Barreirense</td>
+                      <tr *ngFor="let player of listPlayers">
+                        <td *ngIf="!player.Position"><img class="img-rota" src="../../../assets/imgs/adc.png" alt="rota nao declarada"></td>
+                        <td *ngIf="player.Position"><img class="img-rota" src="../../../assets/imgs/{{player.Position.toLowerCase()}}.png" alt="rota nao declarada"></td>
+                        <td>{{player.MatchName}}</td>
+                        <td class="silence">{{player.CommonName}}</td>
+                        <td class="silence">{{player.Nationality}}</td>
                       </tr>
                     </tbody>
                   </table>

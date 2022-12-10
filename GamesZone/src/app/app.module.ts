@@ -16,6 +16,8 @@ import { JogosdehojeComponent } from './telas/jogosdehoje/jogosdehoje.component'
 import { NavbarLeagueComponent } from './telas/navbar-league/navbar-league.component';
 import { PerfilComponent } from './telas/perfil/perfil.component';
 import { ConfigComponent } from './telas/config/config.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { ConfigComponent } from './telas/config/config.component';
   imports: [
     BrowserModule,  
     AppRoutingModule,
-    routing
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
