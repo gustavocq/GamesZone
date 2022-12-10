@@ -1,14 +1,155 @@
 <app-navbar-pesquisa></app-navbar-pesquisa>
+
 <div id="tudo">
-    <div class="d-flex">
-        <h1 class="me-5">Jogos de Hoje</h1>
-        <h1>Campeonatos</h1>
+    <div id="divCampeonatos">
+        <div class="h2">
+            <h2>Campeonatos</h2>
+            <a class="button" routerLink="/campeonatos">Ver Mais</a>
+        </div>
+        <div class="v2" id="campeonatos">
+            <div class="conteudoMain h-item-total">
+                <table class="table tableLeague">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="div1">Nome</th>
+                            <th class="div2">Região</th>
+                            <th class="div3">Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="bi bi-controller"></i></td>
+                            <td>CBLoiro</td>
+                            <td class="silence">Brasil</td>
+                            <td class="silence">22/10/200 até 23/10/2022</td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi bi-controller"></i></td>
+                            <td>CBLoiro</td>
+                            <td class="silence">Brasil</td>
+                            <td class="silence">22/10/200 até 23/10/2022</td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi bi-controller"></i></td>
+                            <td>CBLoiro</td>
+                            <td class="silence">Brasil</td>
+                            <td class="silence">22/10/200 até 23/10/2022</td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi bi-controller"></i></td>
+                            <td>CBLoiro</td>
+                            <td class="silence">Brasil</td>
+                            <td class="silence">22/10/200 até 23/10/2022</td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi bi-controller"></i></td>
+                            <td>CBLoiro</td>
+                            <td class="silence">Brasil</td>
+                            <td class="silence">22/10/200 até 23/10/2022</td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi bi-controller"></i></td>
+                            <td>CBLoiro</td>
+                            <td class="silence">Brasil</td>
+                            <td class="silence">22/10/200 até 23/10/2022</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    <p>coloca 2 banner, pode ser o que ta no prototipo msm fds</p>
-    <div class="d-flex">
-        <h1 class="me-5">Jogadores</h1>
-        <h1>Equipes</h1>
+    <div id="divJogosDeHoje">
+        <div class="h2">
+            <h2>Jogos de hoje</h2>
+            <a class="button" routerLink="/jogoshoje">Ver Mais</a>
+        </div>
+        <div class="v2" id="jogosDeHoje">
+            <div class="conteudoMain h-item-total">
+                <table class="table tableLeague">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="div1">Nome</th>
+                            <th class="div2">Resultado</th>
+                            <th class="div3">Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="bi bi-controller"></i></td>
+                            <td>Furia x Red</td>
+                            <td class="silence">Aguardando</td>
+                            <td class="silence">Hoje 16:00</td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi bi-controller"></i></td>
+                            <td>Furia x Liquid</td>
+                            <td class="silence">2x1</td>
+                            <td class="silence">Hoje 18:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    <p>na hr de mostrar, a gnt filtra pra aparecer 5 por categoria, ai a gnt coloca um btn de ver mais que leva pra a categoria certinho</p>
-    <p>segue +- o layout do prototipo q fica toper</p>
+    <div id="ad">
+        
+    </div>
+    <div id="divEquipes">
+        <div class="h2">
+            <h2>Equipes</h2>
+            <a class="button" routerLink="/equipes">Ver Mais</a>
+        </div><br><br>
+        <div class="v2" id="equipes">
+            <div class="conteudoMain h-item-total">
+                <table class="table tableLeague">
+                    <thead>
+                      <tr>
+                        <th>Active</th>
+                        <th class="div2">Nome</th>
+                        <th class="div1">Area</th>
+                        <th class="div3">Fundação</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><i class="bi bi-patch-check"></i></td>
+                        <td>Furia</td>
+                        <td class="silence">America do Sul</td>
+                        <td class="silence">01/01/2022</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+    <div id="divJogadores">
+        <div class="h2">
+            <h2>Jogadores</h2>
+            <a class="button" routerLink="/jogadores">Ver Mais</a>
+        </div><br><br>
+        <div class="v2" id="jogadores">
+            <div class="conteudoMain h-item-total">
+                <table class="table tableLeague">
+                    <thead>
+                      <tr>
+                        <th>Rota</th>
+                        <th class="div2">Nick</th>
+                        <th class="div1">Nome</th>
+                        <th class="div3">Nacionalidade</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><i class="bi bi-align-middle"></i></td>
+                        <td>Nairo</td>
+                        <td class="silence">Vitor Ian a Lenda</td>
+                        <td class="silence">Barreirense</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,9 +1,135 @@
 div#tudo {
     background-color: #121922;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     color: white;
     padding: 2rem;
     padding-left: calc(400px + 2rem);
     padding-top: calc(73px + 2rem);
+    overflow-y: auto;
+}
+
+/*CAMPEONATOS*/
+div#divCampeonatos {
+    float: left;  
+    width: 62%;  
+    height: 35vh;
+    margin-bottom: 90px;
+}
+
+div#campeonatos {
+    width: 100%;
+    height: 100%;
+    overflow-y:auto;
+} 
+
+/*Jogos de hoje*/
+div#divJogosDeHoje {
+    width: 36%;
+    height: 35vh;
+    float: right;
+    margin-bottom: 90px;
+}
+
+div#jogosDeHoje{
+    width: 100%;
+    height: 100%;
+    float: right;
+    overflow-y:auto;
+}
+
+.v2 {
+    background-color: #161E29; 
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 5px ;
+}
+
+.tableLeague .div1{
+    width: 40%;
+}
+.tableLeague .div2{
+    width: 16%;
+}
+.tableLeague .div3{
+    width: 30%;
+}
+
+.tableLeague th{
+    font-size: 14px;
+    font-weight: 600;
+    color: #D8D8D8;
+}
+
+.tableLeague td{
+    font-size: 19px;
+    font-weight: 200;
+    color: white;
+}
+
+.tableLeague{
+    border-color: #273447 !important;
+}
+
+.silence{
+    font-size: 15px !important;
+    color: #D8D8D8 !important;
+}
+
+.button {
+    cursor: pointer;
+    background-color: #121922;
+    border-radius: 10px;
+    border: 1px solid #313EFE;
+    font-size:small;
+    padding: 5px;
+    float: right;  
+    color: white;  
+}
+
+div h2 {
+    float: left;
+}
+
+div#ad {
+    display: flex;
+    margin-bottom: 7%;
+    width: 100%;
+    height: 30vh;
+    border-radius: 10px;
+    background-image: url(../../../assets/imgs/ad_2.jpg);
+    background-size: cover;
+    background-position: left;
+}
+
+img {
+    text-align: left;
+}
+
+div#divEquipes {
+    margin-top: -50px;
+    width: 36%;
+    height: 35vh;
+    float: left;
+}
+
+div#equipes {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+div#divJogadores {
+    margin-top: -50px;
+    width: 60%;
+    height: 35vh;
+    float: right;
+}
+
+div#jogadores {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
 }
