@@ -3,8 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: 'https://us-central1-gamezone-dev.cloudfunctions.net/api/',
+  //baseUrl: 'http://localhost:5001/gamezone-dev/us-central1/api',
+  api_key: "AIzaSyCUO5K12VAphhmmvlkNc9lfaE9Qyrncryc"
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

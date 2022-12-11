@@ -1,0 +1,50 @@
+<app-navbar-pesquisa></app-navbar-pesquisa>
+<div class="config" id="tudo">
+    <div class="menuConfig" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <button class="nav-link active" id="perfil-tab" data-bs-toggle="pill" data-bs-target="#perfil" type="button" role="tab" aria-controls="perfil" aria-selected="true">Editar Perfil</button>
+        <button class="nav-link" id="senha-tab" data-bs-toggle="pill" data-bs-target="#senha" type="button" role="tab" aria-controls="senha" aria-selected="false">Senha</button>
+        <button class="nav-link" (click)="deleteUser()">Exluir Conta</button>
+      </div>
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="perfil" role="tabpanel" aria-labelledby="perfil-tab">
+            <h4>Editar Perfil</h4>
+            <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente, tempora itaque accusantium nisi nam reiciendis quisquam tenetur facilis repudiandae ea aspernatur, laboriosam eum error delectus praesentium earum quia dolorum molestiae.</p>
+            <div class="mt-4">
+              <form [formGroup]="updateForm">
+              <div class="espInput my-4">
+                <h6>Nome</h6>
+                <div class="areaInput"><input type="text" formControlName="Nome" class="txtEntrada" placeholder="Nome..."></div>
+              </div>
+              <div class="espInput my-4">
+                <h6>Usuário</h6>
+                <div class="areaInput"><input type="text" formControlName="Username" class="txtEntrada" placeholder="Usuário..."></div>
+              </div>
+              <div class="espInput my-4">
+                <h6>Email</h6>
+                <div class="areaInput"><input type="email" formControlName="Email" class="txtEntrada" placeholder="Email..."></div>
+              </div>
+            </form>
+            </div>
+            <button type="button" id="btnEntrar" (click)="updateUser()">Enviar</button>
+        </div>
+        <div class="tab-pane fade" id="senha" role="tabpanel" aria-labelledby="senha-tab">
+            <h4>Editar Senha</h4>
+            <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente, tempora itaque accusantium nisi nam reiciendis quisquam tenetur facilis repudiandae ea aspernatur, laboriosam eum error delectus praesentium earum quia dolorum molestiae.</p>
+            <div class="mt-4">
+              <div class="espInput my-4">
+                <h6>Senha Atual</h6>
+                <div class="areaInput"><input type="password" class="txtEntrada" placeholder="Senha Atual..."></div>
+              </div>
+              <div class="espInput my-4">
+                <h6>Nova Senha</h6>
+                <div class="areaInput"><input type="password" class="txtEntrada" placeholder="Nova Senha..."></div>
+              </div>
+              <div class="espInput my-4">
+                <h6>Repita Nova Senha</h6>
+                <div class="areaInput"><input type="password" class="txtEntrada" placeholder="Nova Senha..."></div>
+              </div>
+            </div>
+            <button type="button" id="btnEntrar">Alterar Senha</button>
+        </div>
+      </div>
+</div>

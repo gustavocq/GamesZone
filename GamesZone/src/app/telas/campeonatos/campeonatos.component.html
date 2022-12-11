@@ -1,0 +1,29 @@
+<app-navbar-pesquisa></app-navbar-pesquisa>
+
+<div class="box" id="tudo">
+  <app-navbar-league></app-navbar-league>
+  
+    <div class="my-3">
+        <h2>Campeonatos</h2>
+    </div>
+    <div class="conteudoMain h-item-total">
+        <table class="table tableLeague">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="div1">Nome</th>
+                <th class="div2">Região</th>
+                <th class="div3">Data</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let comp of listCampeonatos">
+                <td><i class="bi bi-controller"></i></td>
+                <td>{{comp.Name}}</td>
+                <td class="silence">{{comp.AreaName}}</td>
+                <td class="silence">{{comp.Seasons[comp.Seasons.length - 1].StartDate | date: 'dd/MM/yyyy'}} a {{comp.Seasons[comp.Seasons.length - 1].EndDate | date: 'dd/MM/yyyy'}}</td>
+            </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

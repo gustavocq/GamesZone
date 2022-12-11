@@ -1,29 +1,38 @@
-
-<img id="imgLateral" src="../assets/imgs/login-img.png">
-
-<section id="sectionLogin">
-  <div id="logo">
-    <img id="imglogo" src="../../../assets/imgs/logo.png">
-  </div>
-  <h2>Entrar</h2><br><br><br>
-  <p id="textofora">
-    Digite seu endereço de e-mail e senha<br>
-    para acessar sua conta
-  </p>
-  <div id="divareaInput">
-    <div class="areainputUser">
-      <h2>E-mail</h2>
-      <div class="areaInput"><input class="txtEntrada" placeholder="Digite seu e-mail"></div>
+<div class="containLogin">
+  <section id="sectionLogin">
+    <div id="logo">
+      <img id="imglogo" src="../../../assets/imgs/logo.png">
     </div>
-    <a>Esqueceu a senha?</a>
-    <div id="areainputUser">
-      <h2>Senha</h2>
-      <div class="areaInput"><input class="txtEntrada" placeholder="Digite sua senha"></div>
-      <div id="checkbox"><input type="checkbox"><label>Lembrar de mim</label></div>
-      <button type="button" id="btnEntrar" class="crosshair">Entrar</button>
+
+    <div class="txtLogin">
+      <h2>Entrar</h2>
+      <p>Digite seu usuário e senha para acessar sua conta.</p>
     </div>
-  </div>
-  <div id="cadastro">
-    <p>Não possui conta? <a>Cadastra-se</a></p>
-  </div>
-</section>
+
+    <form id="divareaInput" [formGroup]="loginForm" (keydown)="keyDownFunction($event)">
+      <div class="espInput">
+        <h2>Email</h2>
+        <div class="areaInput">
+          <input type="text" class="txtEntrada" pInputText
+          formControlName="Email" placeholder="Digite seu email">
+        </div>
+      </div>
+
+      <div class="espInput">
+        <h2>Senha</h2>
+        <div class="areaInput">
+          <input type="password" class="txtEntrada" pInputText
+          formControlName="Password" placeholder="Digite sua senha">
+        </div>
+      </div>
+
+      <button type="button" id="btnEntrar" (click)="login()">Entrar</button>
+    </form>
+
+    <div id="cadastro">
+      <p>Não possui conta? <a routerLink="/cadastro">Cadastra-se</a></p>
+    </div>
+  </section>
+
+  <div id="imgLateral"></div>
+</div>

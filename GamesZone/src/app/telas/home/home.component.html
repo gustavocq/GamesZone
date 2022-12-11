@@ -1,24 +1,126 @@
 <app-navbar-pesquisa></app-navbar-pesquisa>
 
 <div id="tudo">
-    <section id="partidas">
-        <div class="header">
-            <h2>Partidas</h2>
-            <button class="crosshair"><i class="bi bi-filter-right"></i></button>
-            <button class="crosshair"><i class="bi bi-caret-down-fill"></i></button>
+    <div id="divCampeonatos">
+        <div class="h2">
+            <h2>Campeonatos</h2>
+            <a class="button" routerLink="/campeonatos">Ver Mais</a>
         </div>
-        <div class="conteudo"></div>
-    </section>
-    <section id="noticias">
-        <div class="header">
-            <h2>Notícias</h2>
-            <button class="crosshair"><i class="bi bi-filter-right"></i></button>            
-            <button class="crosshair"><i class="bi bi-caret-down-fill"></i></button>            
+        <div class="v2" id="campeonatos">
+            <div class="conteudoMain h-item-total">
+                <table class="table tableLeague">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="div1">Nome</th>
+                            <th class="div2">Região</th>
+                            <th class="div3">Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let comp of listCampeonatos">
+                            <td><i class="bi bi-controller"></i></td>
+                            <td>{{comp.Name}}</td>
+                            <td class="silence">{{comp.AreaName}}</td>
+                            <td class="silence">{{comp.Seasons[comp.Seasons.length - 1].StartDate | date: 'dd/MM/yyyy'}} a {{comp.Seasons[comp.Seasons.length - 1].EndDate | date: 'dd/MM/yyyy'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="conteudo"></div>
-    </section>
-    <section id="ad">
-        <img src="../../../assets/imgs/ad-img-fer.png">
-        <img src="../../../assets/imgs/ad-img-karrigan.png">
-    </section>    
+    </div>
+    <div id="divJogosDeHoje">
+        <div class="h2">
+            <h2>Jogos de hoje</h2>
+            <a class="button" routerLink="/jogoshoje">Ver Mais</a>
+        </div>
+        <div class="v2" id="jogosDeHoje">
+            <div class="conteudoMain h-item-total">
+                <table class="table tableLeague">
+                    <thead>
+                        <tr>
+                            <th class="div1">Times</th>
+                            <th class="div2">Resultado</th>
+                            <th class="div3">Data</th>
+                            <th class="div3">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let jogos of listJogos">
+                            <td *ngIf="jogos.Status != 'Canceled'">{{jogos.TeamAName}} vs {{jogos.TeamBName}}</td>
+                            <td class="silence" *ngIf="!jogos.TeamAScore && jogos.Status != 'Canceled'">0 x 0</td>
+                            <td class="silence" *ngIf="jogos.TeamAScore && jogos.Status != 'Canceled'">{{jogos.TeamAScore}} x {{jogos.TeamBScore}}</td>
+                            <td class="silence" *ngIf="jogos.Status != 'Canceled'">{{jogos.Updated | date: 'dd/MM/yyyy'}}</td>
+                            <td class="silence" *ngIf="jogos.Status != 'Canceled'">{{jogos.Status}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="ad">
+
+    </div>
+    <div id="divEquipes">
+        <div class="h2">
+            <h2>Equipes</h2>
+            <a class="button" routerLink="/equipes">Ver Mais</a>
+        </div><br><br>
+        <div class="v2" id="equipes">
+            <div class="conteudoMain h-item-total">
+                <table class="table tableLeague">
+                    <thead>
+                        <tr>
+                            <th>Active</th>
+                            <th class="div2">Nome</th>
+                            <th class="div1">Area</th>
+                            <th class="div3">Fundação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let teams of listTeams">
+                            <td *ngIf="teams.Active"><i class="bi bi-patch-check"></i></td>
+                            <td *ngIf="!teams.Active"><i class="bi bi-x-circle-fill"></i></td>
+                            <td>{{teams.ShortName}}</td>
+                            <td class="silence">{{teams.AreaName}}</td>
+                            <td class="silence" *ngIf="teams.Founded">{{teams.Founded}}</td>
+                            <td class="silence" *ngIf="!teams.Founded">Sem info</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="divJogadores">
+        <div class="h2">
+            <h2>Jogadores</h2>
+            <a class="button" routerLink="/jogadores">Ver Mais</a>
+        </div><br><br>
+        <div class="v2" id="jogadores">
+            <div class="conteudoMain h-item-total">
+                <table class="table tableLeague">
+                    <thead>
+                        <tr>
+                            <th>Rota</th>
+                            <th class="div2">Nick</th>
+                            <th class="div1">Nome</th>
+                            <th class="div3">Nacionalidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let player of listPlayers">
+                            <td *ngIf="!player.Position"><img class="img-rota" src="../../../assets/imgs/adc.png"
+                                    alt="rota nao declarada"></td>
+                            <td *ngIf="player.Position"><img class="img-rota"
+                                    src="../../../assets/imgs/{{player.Position.toLowerCase()}}.png"
+                                    alt="rota nao declarada"></td>
+                            <td>{{player.MatchName}}</td>
+                            <td class="silence">{{player.CommonName}}</td>
+                            <td class="silence">{{player.Nationality}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,0 +1,24 @@
+<app-navbar-pesquisa></app-navbar-pesquisa>
+
+<div class="box" id="tudo">
+    <div class="h-item-auto">
+        <div id="bannerUser"></div>
+        <div class="containInfoUser">
+            <div class="fotoUser">
+                <img class="imgUser" src="../../../assets/imgs/user2.jfif" alt="">
+            </div>
+            <div class="infoUser">
+                <h2>{{user.displayName}}</h2>
+                <p class="muted">@{{user.username}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="postPerfil h-item-total">
+        <div>
+            <i class="bi bi-emoji-frown-fill"></i>
+            <h5>Esse perfil ainda não tem nenhuma publicação.</h5>
+            <a class="btnPerfil" routerLink="/home">Voltar para Home</a>
+        </div>
+    </div>
+</div>

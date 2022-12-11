@@ -1,0 +1,29 @@
+<app-navbar-pesquisa></app-navbar-pesquisa>
+
+<div class="box" id="tudo">
+    <app-navbar-league></app-navbar-league>
+    <div class="my-3">
+        <h2>Jogadores</h2>
+    </div>
+    <div class="conteudoMain h-item-total">
+        <table class="table tableLeague">
+            <thead>
+              <tr>
+                <th>Rota</th>
+                <th class="div2">Nick</th>
+                <th class="div1">Nome</th>
+                <th class="div3">Nacionalidade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let player of listPlayers">
+                <td *ngIf="!player.Position"><img class="img-rota" src="../../../assets/imgs/adc.png" alt="rota nao declarada"></td>
+                <td *ngIf="player.Position"><img class="img-rota" src="../../../assets/imgs/{{player.Position.toLowerCase()}}.png" alt="rota nao declarada"></td>
+                <td>{{player.MatchName}}</td>
+                <td class="silence">{{player.CommonName}}</td>
+                <td class="silence">{{player.Nationality}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

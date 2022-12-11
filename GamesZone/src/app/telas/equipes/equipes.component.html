@@ -1,0 +1,31 @@
+<app-navbar-pesquisa></app-navbar-pesquisa>
+
+<div class="box" id="tudo">
+  <app-navbar-league></app-navbar-league>
+
+  <div class="my-3">
+    <h2>Equipes</h2>
+  </div>
+  <div class="conteudoMain h-item-total">
+    <table class="table tableLeague">
+      <thead>
+        <tr>
+          <th>Active</th>
+          <th class="div1">Nome</th>
+          <th class="div2">Area</th>
+          <th class="div3">Fundação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let teams of listTeams">
+          <td *ngIf="teams.Active"><i class="bi bi-patch-check"></i></td>
+          <td *ngIf="!teams.Active"><i class="bi bi-x-circle-fill"></i></td>
+          <td>{{teams.ShortName}}</td>
+          <td class="silence">{{teams.AreaName}}</td>
+          <td class="silence" *ngIf="teams.Founded">{{teams.Founded}}</td>
+          <td class="silence" *ngIf="!teams.Founded">Sem informação</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,145 +1,134 @@
 
-nav {
-    float: left;
+.menuLateral{
     width: 400px;
     height: 100vh;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    
     background-color: #0C1117;
-    padding: 5px;
+    padding: 3rem;
     z-index: 9;
-    backdrop-filter: blur(1.5px);
 }
 
-div#logo {
+#logo {
     width: 100%;
-    height: 150px;
-    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 40px;
-    margin-top: 40px;
+
+    margin-top: 2rem;
+    margin-bottom: 5rem;
 }
 
 #logo img {
     width: 230px;
-    height: 80px;
 }
-
-section.nav {
-    width: 80%;   
-}
-
-.nav ul {
-    padding-left: 60px;
-    padding-top: 15px;
-}
-
-.nav ul li {
-    display: flex;    
-    list-style-type: none;
-    margin-bottom: 15px;
-    height: 35px;
-    width: 100%;
-}
-
-.nav ul li a {  
-    display: flex;
-    gap: 10px;  
-    height: 100%;    
-    font-size: 18px;
-    align-items: center;
-    cursor:pointer;
-}
-
-a:hover{
-    text-decoration: underline;
-  }
 
 .navImg{
-    height: 24px;
-    width: 24px;
-    margin-bottom: 0px;
+    font-size: 25px;
+    width: 25px;
+    margin-right: 15px;
+    color: #D8D8D8;
 }
 
-div.linha{
+.containItem{
+    width: calc(100%-40px);
+    margin-left: 40px;
+}
+
+.containItem li{
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.containItem li a{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #D8D8D8;
+}
+
+.linha{
     height: 2px;
     background-color: #1F2C3C;
-    width: 80%;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 30px ;
+    width: 100%;
+    margin: 3rem 0;
 }
 
 h2.titulo {
     color: #828282;
     font-size: 15px;
-    margin-left: 50px;
+    margin-bottom: 20px;
 }
 
-section#faixaTopo {  
-    display: block; 
-    float: top; 
-    width: 100%;
-    height: 104px;
+/*NAV TOP*/
+
+#faixaTopo {  
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 8;
+
+    width: calc(100% - 400px);
+    height: 73px;
     background-color: #121922;
-    padding: 5px;
+    border-bottom: 1px solid #202c3b;
+    padding: 1rem 2rem;
 }
 
-section#faixaTopo div#pesquisa {
+#pesquisa{
     display: flex;
-    padding-left: 60px;
-    padding-top: 25px;    
+    align-items: center;
 }
 
-section#faixaTopo div#pesquisa div#areaBarraPesquisa {
-    border: 0.5px;
-    border-color: #121922 ;
-    display: flex;
-    width: 350px;
-    height: 35px;
-    border-radius : 10px;
+#areaBarraPesquisa{
     background-color: #161E29;
+    padding: .5rem 1rem;
+    border-radius: 20px;
+    margin-right: 8px;
 }
 
-div#areaBarraPesquisa input#barraPesquisa {
-    border: 0;
-    width: 320px;
-    box-shadow: 0 0 0 0;
-    outline: 0;
-    margin-left: 15px;
-    border-radius : 10px;
-    background-color: #161E29;
+#barraPesquisa{
+    background-color: transparent;
+    width: 250px;
 }
 
-section#faixaTopo div#pesquisa button#botaoPesquisa {
-    width: 35px;
-    height: 35px;
-    border-radius: 50px;
+#botaoPesquisa{
     background-color: #313EFE;
-    margin-left: 15px;
+    height: 35px;
+    width: 35px;
+    border-radius: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .6s ease;
 }
 
-
-i#iconPesquisa {
-   margin: 0;
-   margin-left: 6.3px;
-   margin-bottom: 3px;
-    
+#botaoPesquisa:hover{
+    background-color: #1825da;
+    cursor: pointer;
 }
 
-div#pesquisa div#botoes {
-    padding: 10px;
-    padding-left: 780px;
-    height: 100px;
+#botoes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-div#pesquisa div#botoes button{    
-    background-color: #121922;
-    padding-left: 30px;
-    border: 0px;
-}
-
-
-i {
+.iconNav{
+    background-color: transparent;
     font-size: 20px;
+    margin-right: 20px;
 }
+
+.dropdown-menu-dark{
+    background-color: #202935 !important;
+}
+

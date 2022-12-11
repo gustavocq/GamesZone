@@ -1,46 +1,53 @@
 <link href='https://css.gg/search.css' rel='stylesheet'>
 <link href='https://css.gg/bell.css' rel='stylesheet'>
-<nav>
-  <div id="logo">
+
+<nav class="menuLateral">
+  <a id="logo" routerLink="/home">
     <img src="../assets/imgs/logo.png">
-  </div>
+  </a>
+
+
+  <ul class="containItem">
+    <li><a routerLink="/home"><i class="bi bi-house-door-fill navImg"></i>Home</a></li>
+    <li><a routerLink="/chat"><i class="bi bi-chat-left-text-fill navImg"></i>Chat</a></li>
+    <li><a routerLink="/perfil"><i class="bi bi-person-fill navImg"></i>Perfil</a></li>
+    <li><a routerLink="/config"><i class="bi bi-gear-fill navImg"></i>Configuração</a></li>
+  </ul>
+
   <div class="linha"></div>
-  <section class="nav">
-    <h2 class="titulo">Menu</h2>
+
+  <section class="containItem">
+    <h2 class="titulo">League Of Legends</h2>
     <ul>
-      <li><a><i class="bi bi-house-door-fill"></i>Home</a></li>
-      <li><a><i class="bi bi-newspaper"></i>Notícias</a></li>
-      <li><a><i class="bi bi-chat-square-quote-fill"></i>Fórum</a></li>
-      <li><a><i class="bi bi-chat-text-fill"></i>Chat</a></li>
+      <li><a routerLink="/campeonatos"><i class="bi bi-trophy-fill navImg"></i>Campeonatos</a></li>
+      <li><a routerLink="/jogadores"><i class="bi bi-person-lines-fill navImg"></i>Jogadores</a></li>
+      <li><a routerLink="/jogoshoje"><i class="bi bi-joystick navImg"></i>Jogos de Hoje</a></li>
+      <li><a routerLink="/equipes"><i class="bi bi-people-fill navImg"></i>Equipes</a></li>
     </ul>
   </section>
-  <div class="linha"></div>
-  <section class="nav">
-    <h2 class="titulo">Games</h2>
-    <ul>
-      <li><a><img class="navImg" src="../assets/imgs/icon_lol.png">League Of Legends</a></li>
-    </ul>
-  </section>
-  <div class="linha"></div>
-  <section class="nav">
-    <h2 class="titulo">Teams</h2>
-    <ul>
-      <li><a class="crosshair"><i class="bi bi-people-fill"></i>Equipes</a></li>
-      <li><a class="crosshair"><i id="iconperfil" class="bi bi-person-fill"></i>Perfil</a></li>
-      <li><a class="crosshair"><i class="bi bi-trophy-fill"></i>Campeonato</a></li>
-    </ul>
-  </section>  
 </nav>
+
 <section id="faixaTopo">
   <div id="pesquisa">
     <div id="areaBarraPesquisa">
       <input id="barraPesquisa" placeholder="Pesquisar...">
     </div>
-    <button id="botaoPesquisa" class="crosshair"><i id="iconPesquisa" class="gg-search"></i></button>
-    <div id="botoes"> 
-      <button id="config" class="crosshair"><i id="iconconfig" class="bi bi-gear-fill"></i></button>
-      <button id="notificacoes" class="crosshair"><i class="bi bi-bell-fill"></i></button>
-      <button id="perfil" class="crosshair"><i id="iconperfil" class="bi bi-person-fill"></i></button>
-   </div> 
+
+    <button id="botaoPesquisa"><i class="bi bi-search"></i></button>
   </div>
+
+  <div id="botoes"> 
+    <div class="dropdown text-end">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="../../../assets/imgs/user2.jfif" alt="mdo" width="32" height="32" class="rounded-circle">
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small">
+        <li><a class="dropdown-item" routerLink="/perfil"><i class="bi bi-person-fill"></i> Perfil</a></li>
+        <li><a class="dropdown-item" routerLink="/config"><i class="bi bi-gear-fill"></i> Configuração</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-in-left"></i> Sair</a></li>
+      </ul>
+    </div>
+
+  </div> 
 </section>
