@@ -1,145 +1,102 @@
-div#tudo {
-    background-color: #121922;
-    width: 100%;
-    height: 100%;
-    color: white;
-    padding: 2rem;
-    padding-left: calc(400px + 2rem);
-    padding-top: calc(73px + 2rem);
-    overflow-y: auto;
-}
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CampeonatoService } from 'src/app/services/campeonato.service';
+import { PlayerService } from 'src/app/services/player.service';
+import { TeamService } from 'src/app/services/team.service';
+import { UserService } from 'src/app/services/user.service';
+import { JogosService } from 'src/app/services/game.service';
+import { DatePipe } from '@angular/common';
 
-/*CAMPEONATOS*/
-div#divCampeonatos {
-    float: left;  
-    width: 62%;  
-    height: 35vh;
-    margin-bottom: 90px;
-}
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+})
+export class HomeComponent implements OnInit {
 
-div#campeonatos {
-    width: 100%;
-    height: 100%;
-    overflow-y:auto;
-} 
 
-/*Jogos de hoje*/
-div#divJogosDeHoje {
-    width: 36%;
-    height: 35vh;
-    float: right;
-    margin-bottom: 90px;
-}
+  listPlayers: Array<any> = [];
+  listCampeonatos: Array<any> = [];
+  listTeams: Array<any> = [];
+  listJogos: Array<any> = [];
 
-div#jogosDeHoje{
-    width: 100%;
-    height: 100%;
-    float: right;
-    overflow-y:auto;
-}
+  constructor(
+    private jogos_service: JogosService,
+    private campeonato_service: CampeonatoService,
+    private user_service: UserService,
+    private player_service: PlayerService,
+    private team_service: TeamService,
+    private router: Router
+  ) { }
 
-.v2 {
-    background-color: #161E29; 
-    border-radius: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    padding-top: 5px ;
-}
+  ngOnInit(): void {
+    this.getCurrentUser();
+    this.getAllTeams();
+    this.getAllCampeonatos();
+    this.getAllPlayers();
+    this.getAllJogos();
+  }
 
-.tableLeague .div1{
-    width: 40%;
-}
-.tableLeague .div2{
-    width: 16%;
-}
-.tableLeague .div3{
-    width: 30%;
-}
+  getCurrentUser() {
+    this.user_service.getCurrentUser().subscribe({
+      next: (result) => {
+        localStorage.setItem('user', JSON.stringify(result.DATA));
+      },
+      error:(err) => {
+        console.log(err);
+      },
+    });
+  }
 
-.tableLeague th{
-    font-size: 14px;
-    font-weight: 600;
-    color: #D8D8D8;
-}
+  getAllPlayers() {
+    this.player_service.getAllPlayers().subscribe({
+      next: (result) => {
+        this.listPlayers = result.DATA;
+        this.listPlayers.sort((a, b) => (a.MatchName > b.MatchName) ? 1 : -1)
+        console.log(this.listPlayers)
+      },
+      error:(err) => {
+        console.log(err);
+      },
+    });
+  }
 
-.tableLeague td{
-    font-size: 19px;
-    font-weight: 200;
-    color: white;
-}
+  getAllCampeonatos() {
+    this.campeonato_service.getAllCampeonatos().subscribe({
+      next: (result) => {
+        this.listCampeonatos = result.DATA;
+        // this.listPlayers.sort((a, b) => (a.MatchName > b.MatchName) ? 1 : -1)
+        console.log(this.listCampeonatos)
+      },
+      error:(err) => {
+        console.log(err);
+      },
+    });
+  }
 
-.tableLeague{
-    border-color: #273447 !important;
-}
+  getAllTeams() {
+    this.team_service.getAllTeams().subscribe({
+      next: (result) => {
+        this.listTeams = result.DATA;
+        // this.listPlayers.sort((a, b) => (a.MatchName > b.MatchName) ? 1 : -1)
+        console.log(this.listTeams)
+      },
+      error:(err) => {
+        console.log(err);
+      },
+    });
+  }
 
-.silence{
-    font-size: 15px !important;
-    color: #D8D8D8 !important;
-}
-
-.button {
-    cursor: pointer;
-    background-color: #121922;
-    border-radius: 10px;
-    border: 1px solid #313EFE;
-    font-size:small;
-    padding: 5px 10px;
-    float: right;  
-    color: white;  
-    transition: .6s ease;
-}
-
-.button:hover{
-    background-color: #313EFE;
-}
-
-.img-rota {
-    width: 40px;
-    height: 40px;
-}
-
-div h2 {
-    float: left;
-    margin-bottom: 15px;
-}
-
-div#ad {
-    display: flex;
-    margin-bottom: 7%;
-    width: 100%;
-    height: 30vh;
-    border-radius: 10px;
-    background-image: url(../../../assets/imgs/home_banner.jpg);
-    background-size: cover;
-    background-position: left;
-}
-
-img {
-    text-align: left;
-}
-
-div#divEquipes {
-    margin-bottom: 2rem;
-    width: 36%;
-    height: 35vh;
-    float: left;
-}
-
-div#equipes {
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-}
-
-div#divJogadores {
-    width: 60%;
-    height: 35vh;
-    float: right;
-}
-
-div#jogadores {
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
+  getAllJogos() {
+    this.jogos_service.getAllJogos().subscribe({
+      next: (result) => {
+        this.listJogos = result.DATA;
+        // this.listPlayers.sort((a, b) => (a.MatchName > b.MatchName) ? 1 : -1)
+        console.log(this.listJogos)
+      },
+      error:(err) => {
+        console.log(err);
+      },
+    });
+  }
 }
