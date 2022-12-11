@@ -47,7 +47,6 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let jogos of listJogos">
-                            <td *ngIf="jogos.Status != 'Canceled'"><i class="bi bi-controller"></i></td>
                             <td *ngIf="jogos.Status != 'Canceled'">{{jogos.TeamAName}} vs {{jogos.TeamBName}}</td>
                             <td class="silence" *ngIf="!jogos.TeamAScore && jogos.Status != 'Canceled'">0 x 0</td>
                             <td class="silence" *ngIf="jogos.TeamAScore && jogos.Status != 'Canceled'">{{jogos.TeamAScore}} x {{jogos.TeamBScore}}</td>
