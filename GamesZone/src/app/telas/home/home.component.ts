@@ -4,7 +4,7 @@ import { CampeonatoService } from 'src/app/services/campeonato.service';
 import { PlayerService } from 'src/app/services/player.service';
 import { TeamService } from 'src/app/services/team.service';
 import { UserService } from 'src/app/services/user.service';
-import { JogosService } from 'src/app/services/jogos.service';
+import { JogosService } from 'src/app/services/game.service';
 import { DatePipe } from '@angular/common';
 
 @Component({

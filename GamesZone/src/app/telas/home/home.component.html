@@ -22,7 +22,7 @@
                             <td><i class="bi bi-controller"></i></td>
                             <td>{{comp.Name}}</td>
                             <td class="silence">{{comp.AreaName}}</td>
-                            <td class="silence">{{comp.StartDate}} a {{comp.EndDate}}</td>
+                            <td class="silence">{{comp.Seasons[comp.Seasons.length - 1].StartDate | date: 'dd/MM/yyyy'}} a {{comp.Seasons[comp.Seasons.length - 1].EndDate | date: 'dd/MM/yyyy'}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -47,12 +47,12 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let jogos of listJogos">
-                            <td><i class="bi bi-controller"></i></td>
-                            <td>{{jogos.TeamAName}} vs {{jogos.TeamBName}}</td>
-                            <td class="silence" *ngIf="!jogos.TeamAScore">0 x 0</td>
-                            <td class="silence" *ngIf="jogos.TeamAScore">{{jogos.TeamAScore}} x {{jogos.TeamBScore}}</td>
-                            <td class="silence">{{jogos.Updated | date: 'dd/MM/yyyy'}}</td>
-                            <td class="silence">{{jogos.Status}}</td>
+                            <td *ngIf="jogos.Status != 'Canceled'"><i class="bi bi-controller"></i></td>
+                            <td *ngIf="jogos.Status != 'Canceled'">{{jogos.TeamAName}} vs {{jogos.TeamBName}}</td>
+                            <td class="silence" *ngIf="!jogos.TeamAScore && jogos.Status != 'Canceled'">0 x 0</td>
+                            <td class="silence" *ngIf="jogos.TeamAScore && jogos.Status != 'Canceled'">{{jogos.TeamAScore}} x {{jogos.TeamBScore}}</td>
+                            <td class="silence" *ngIf="jogos.Status != 'Canceled'">{{jogos.Updated | date: 'dd/MM/yyyy'}}</td>
+                            <td class="silence" *ngIf="jogos.Status != 'Canceled'">{{jogos.Status}}</td>
                         </tr>
                     </tbody>
                 </table>

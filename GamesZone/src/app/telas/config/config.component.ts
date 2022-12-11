@@ -26,7 +26,7 @@ export class ConfigComponent implements OnInit {
     this.updateForm = this.fb.group({
       Nome: new FormControl(null, [Validators.required]),
       Username: new FormControl(null, Validators.required),
-      Email: new FormControl(null, [Validators.required, Validators.email])
+      Email: new FormControl(null, [Validators.email])
     });
   }
 
@@ -39,6 +39,7 @@ export class ConfigComponent implements OnInit {
       }
       this.user_service.updateUser(user).subscribe({
         next: (result) => {
+          localStorage.setItem('user', JSON.stringify(result.DATA));
           window.alert("Usuário atualizado com sucesso.")
         },
         error: (err) => {

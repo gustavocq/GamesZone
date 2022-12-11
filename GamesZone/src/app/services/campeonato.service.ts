@@ -23,6 +23,6 @@ export class CampeonatoService {
   getAllCampeonatos(): Observable<any> {
     const headers = this.headers
     return this.http
-      .get<any>(`${this.base_url}v1/campeonato/get_all`, { headers }).pipe(take(1));
+      .get<any>(`${this.base_url}v1/campeonatos/get_all`, { headers }).pipe(take(1));
   }
 }

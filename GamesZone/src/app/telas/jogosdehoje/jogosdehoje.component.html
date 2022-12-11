@@ -19,13 +19,13 @@
       </thead>
       <tbody>
         <tr *ngFor="let jogos of listJogos">
-          <td><i class="bi bi-controller"></i></td>
-          <td>{{jogos.TeamAName}} vs {{jogos.TeamBName}}</td>
-          <td class="silence" *ngIf="!jogos.TeamAScore">0 x 0</td>
-          <td class="silence" *ngIf="jogos.TeamAScore">{{jogos.TeamAScore}} x {{jogos.TeamBScore}}</td>
-          <td class="silence">{{jogos.Updated | date: 'dd/MM/yyyy'}}</td>
-          <td class="silence">{{jogos.Status}}</td>
-        </tr>
+          <td *ngIf="jogos.Status != 'Canceled'"><i class="bi bi-controller"></i></td>
+          <td *ngIf="jogos.Status != 'Canceled'">{{jogos.TeamAName}} vs {{jogos.TeamBName}}</td>
+          <td class="silence" *ngIf="!jogos.TeamAScore && jogos.Status != 'Canceled'">0 x 0</td>
+          <td class="silence" *ngIf="jogos.TeamAScore && jogos.Status != 'Canceled'">{{jogos.TeamAScore}} x {{jogos.TeamBScore}}</td>
+          <td class="silence" *ngIf="jogos.Status != 'Canceled'">{{jogos.Updated | date: 'dd/MM/yyyy'}}</td>
+          <td class="silence" *ngIf="jogos.Status != 'Canceled'">{{jogos.Status}}</td>
+      </tr>
       </tbody>
     </table>
   </div>

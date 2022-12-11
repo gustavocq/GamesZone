@@ -21,7 +21,7 @@
                 <td><i class="bi bi-controller"></i></td>
                 <td>{{comp.Name}}</td>
                 <td class="silence">{{comp.AreaName}}</td>
-                <td class="silence">{{comp.StartDate}} a {{comp.EndDate}}</td>
+                <td class="silence">{{comp.Seasons[comp.Seasons.length - 1].StartDate | date: 'dd/MM/yyyy'}} a {{comp.Seasons[comp.Seasons.length - 1].EndDate | date: 'dd/MM/yyyy'}}</td>
             </tr>
             </tbody>
           </table>
